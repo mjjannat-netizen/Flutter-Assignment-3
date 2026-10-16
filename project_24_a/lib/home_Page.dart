@@ -3,178 +3,449 @@ import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-  @override
-  Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(title: Text("Home Page 64A"),
-    backgroundColor: const Color.fromARGB(255, 171, 62, 118),
-    foregroundColor: Colors.white,
-    // leading: Icon(Icons.home),
-    actions: [
-      IconButton(onPressed: (){}, icon: Icon(Icons.person)),
-      IconButton(onPressed: (){}, icon: Icon(Icons.person)),
-    ],
-    ),
-    body: Column(children: [
-      Row(children:[
-      Padding(padding: const EdgeInsets.fromLTRB(0, 10, 30, 0),),
-      TextButton(
-        onPressed: (){},
-        style: TextButton.styleFrom(
-          backgroundColor: Colors.red,
-          foregroundColor: Colors.white,
-          side: BorderSide(color:Colors.lightGreen),
-          elevation: 5,
-          shadowColor: Colors.amber,
-        ),
-         child: Text("Red"),
-         ),
-         OutlinedButton(
-          onPressed: (){},
-          style: TextButton.styleFrom(
-            backgroundColor: Colors.green,
-            foregroundColor: Colors.white,
-            side: BorderSide(color: Colors.red),
-            elevation: 10,
-            shadowColor: Colors.red,
-          ),
-           child: Text("Green"),),
-           IconButton(onPressed: (){}, icon:Icon(Icons.login),),
-           ElevatedButton(onPressed: (){}, child: Text("Blue"),),
-      ],
-    ),  
-   
-
-Container(
-            height: 250,
-            width: 250,
-            margin: EdgeInsets.all(20),
-            padding: EdgeInsets.all(20),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 218, 54, 4),
-              border: Border.all(width: 5, color:const Color.fromARGB(255, 14, 14, 14)),
-              borderRadius: BorderRadius.all(Radius.circular(30)),
-             shape: BoxShape.rectangle,
-             gradient: const LinearGradient(
-              colors:[ Color.fromARGB(255, 1, 90, 245),
-              Color.fromARGB(255, 2, 250, 44),
-              Color.fromARGB(255, 236, 77, 28),
-              ]
-              ) ,
-            ),
-            child: Text("64 A", style:TextStyle(fontSize:20,fontWeight:FontWeight.bold),),
-          ),
-          SizedBox(
-            height: 300,
-            width: 300,
-            child: Card(
-              margin:EdgeInsets.all(30),
-              color: const Color.fromARGB(255, 252, 148, 3),
-              elevation: 30,
-              shadowColor: const Color.fromARGB(255, 239, 178, 8),
-
-              child: Text("Hello Card",
-              // text bold korar jonno
-              style:TextStyle(fontSize:20,fontWeight: FontWeight.bold) ,),
-            ),
-          ),
-        ],
- ),
-    drawer: Drawer(
-      child: Column(
-        children: [
-          UserAccountsDrawerHeader(decoration: BoxDecoration(color: const Color.fromARGB(255, 95, 147, 235)),
-          accountName: Text("Name"), accountEmail: Text("Email"),
-          ),
-          ListTile(
-            trailing: Icon(Icons.home),
-            title: Text("HomePage"),
-            hoverColor: Colors.limeAccent,
-            splashColor:Colors.greenAccent,
-            onTap:(){} ,
-          ),
-          Divider(color: Colors.lightBlueAccent,),
-          ListTile(
-            trailing: Icon(Icons.settings),
-            title: Text("Setting"),
-            hoverColor: Colors.limeAccent,
-            splashColor:const Color.fromARGB(255, 111, 143, 127),
-            onTap: (){},
-          ),
-          Spacer(),
-          ListTile(
-            trailing: Icon(Icons.logout),
-            title: Text("LogOut",style:TextStyle(fontWeight: FontWeight.bold),),
-            hoverColor: Colors.limeAccent,
-            splashColor: const  Color.fromARGB(255, 111, 143, 127),
-            onTap: (){},
-          ),
-        ],
-      ),
-    ),
-
-    /*body: Text("Hello Flutter",
-    style: GoogleFonts.lobster(
-      textStyle: TextStyle(
-        fontSize: 35,
-        color: const Color.fromARGB(255, 39, 93, 185),
-      )
-    ),
-    ),*/
-    floatingActionButton: FloatingActionButton(
-      onPressed: (){},
-      backgroundColor:Colors.greenAccent ,
-      foregroundColor: Colors.blueGrey,
-      tooltip: "Add something",
-      shape: CircleBorder(),
-      child: Icon(Icons.add),
-      ),
-    );
-  }
-}
-
-/*class ContainerPage extends StatelessWidget {
-  const ContainerPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: 300,
-            width: 300,
-            margin: EdgeInsets.all(20),
-            padding: EdgeInsets.all(20),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Colors.deepOrangeAccent,
-              border: Border.all(width: 5, color:Colors.blueAccent),
-              borderRadius: BorderRadius.all(Radius.circular(30)),
-             shape: BoxShape.rectangle,
-             gradient: const LinearGradient(
-              colors:[ Colors.blueAccent,
-              const Color.fromARGB(255, 73, 202, 95),
-              Colors.deepOrangeAccent,
-              ]
-              ) ,
+      appBar: AppBar(
+        title: Text(
+          "My Profile",
+          style: GoogleFonts.lobster(fontSize: 26),
+        ),
+        backgroundColor: const Color.fromARGB(255, 171, 62, 118),
+        foregroundColor: Colors.white,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Badge(
+              label: Text(
+                "0",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              backgroundColor:
+                  const Color.fromARGB(255, 183, 235, 80),
+              textColor: const Color.fromARGB(255, 10, 10, 10),
+              child: Icon(Icons.notifications),
             ),
-            child: Text("64 A"),
+            tooltip: "Notification",
           ),
-          SizedBox(
-            height: 300,
-            width: 300,
-            child: Card(
-              margin:EdgeInsets.all(30),
-              color: Colors.amber,
-              elevation: 30,
-              shadowColor: Colors.amber,
-              child: Text("Hello Card"),
-            ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.search),
+            tooltip: "Search",
           ),
         ],
       ),
+
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 25),
+
+            // Profile Card
+            Container(
+              height: 250,
+              width: 300,
+              padding: EdgeInsets.all(25),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(35)),
+                shape: BoxShape.rectangle,
+                gradient: const LinearGradient(
+                  colors: [
+                    Color.fromARGB(255, 95, 147, 235),
+                    Color.fromARGB(255, 171, 62, 118),
+                  ],
+                ),
+              ),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundColor: Colors.white,
+                    child: Text(
+                      "M",
+                      style: TextStyle(
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 171, 62, 118),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 12),
+                  Text(
+                    "Mehejabin Jannat",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    "CSE-64",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 20),
+
+            // Message Button
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.message),
+                  label: Text("Message"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:
+                        const Color.fromARGB(255, 171, 62, 118),
+                    foregroundColor: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+
+            SizedBox(height: 20),
+
+            // Search Bar
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40),
+              child: TextField(
+                decoration: InputDecoration(
+                  isDense: true,
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 6),
+                  hintText: "Search...",
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Color.fromARGB(255, 171, 62, 118),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 171, 62, 118),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 20),
+
+            // Three Equal-Width Cards
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  double cardWidth =
+                      (constraints.maxWidth - 16) / 3;
+
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Year Card
+                      SizedBox(
+                        width: cardWidth,
+                        height: 125,
+                        child: Card(
+                          color: Colors.white,
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(12),
+                            child: Column(
+                              mainAxisAlignment:
+                                  MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.school,
+                                  color: Color.fromARGB(
+                                      255, 197, 92, 178),
+                                  size: 30,
+                                ),
+                                SizedBox(height: 2),
+                                Text(
+                                  "3rd",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  "Year",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      // Courses Card
+                      SizedBox(
+                        width: cardWidth,
+                        height: 125,
+                        child: Card(
+                          color: Colors.white,
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(12),
+                            child: Column(
+                              mainAxisAlignment:
+                                  MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.book,
+                                  color: Color.fromARGB(
+                                      255, 197, 92, 178),
+                                  size: 30,
+                                ),
+                                SizedBox(height: 2),
+                                Text(
+                                  "6",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  "Courses",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      // Projects Card
+                      SizedBox(
+                        width: cardWidth,
+                        height: 125,
+                        child: Card(
+                          color: Colors.white,
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(12),
+                            child: Column(
+                              mainAxisAlignment:
+                                  MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.code,
+                                  color: Color.fromARGB(
+                                      255, 197, 92, 178),
+                                  size: 30,
+                                ),
+                                SizedBox(height: 3),
+                                Text(
+                                  "2",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  "Projects",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+
+            SizedBox(height: 10),
+
+            // My Skills Heading
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "My Skills",
+                  style: GoogleFonts.lobster(
+                    fontSize: 24,
+                    color: Color.fromARGB(255, 167, 7, 89),
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 8),
+
+            // Skill 
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    Chip(
+                      label: Text("Flutter"),
+                      backgroundColor: Colors.pink.shade100,
+                    ),
+                    Chip(
+                      label: Text("Dart"),
+                      backgroundColor: Colors.pink.shade100,
+                    ),
+                    Chip(
+                      label: Text("DBMS"),
+                      backgroundColor: Colors.pink.shade100,
+                    ),
+                    Chip(
+                      label: Text("OOP"),
+                      backgroundColor: Colors.pink.shade100,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+
+      // Drawer
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 59, 119, 150),
+              ),
+              accountName: Text("Mehejabin Jannat"),
+              accountEmail: Text(
+                "Email- mehejabin.jannat.official@gmail.com",
+              ),
+            ),
+
+            // HomePage
+            InkWell(
+              onTap: () {},
+              hoverColor: Colors.limeAccent,
+              splashColor: Colors.greenAccent,
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("HomePage"),
+                    Icon(Icons.home),
+                  ],
+                ),
+              ),
+            ),
+
+            Divider(color: Colors.lightBlueAccent),
+
+            // Profile
+            InkWell(
+              onTap: () {},
+              hoverColor: Colors.limeAccent,
+              splashColor:
+                  const Color.fromARGB(255, 111, 143, 127),
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Profile"),
+                    Icon(Icons.person),
+                  ],
+                ),
+              ),
+            ),
+
+            // Settings
+            InkWell(
+              onTap: () {},
+              hoverColor: Colors.limeAccent,
+              splashColor:
+                  const Color.fromARGB(255, 111, 143, 127),
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Setting"),
+                    Icon(Icons.settings),
+                  ],
+                ),
+              ),
+            ),
+
+            Spacer(),
+
+            Divider(),
+
+            // Logout
+            InkWell(
+              onTap: () {},
+              hoverColor: Colors.limeAccent,
+              splashColor:
+                  const Color.fromARGB(255, 111, 143, 127),
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "LogOut",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Icon(Icons.logout),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+
+      // Floating Action Button
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.greenAccent,
+        foregroundColor: Colors.blueGrey,
+        tooltip: "Add something",
+        shape: CircleBorder(),
+        child: Icon(Icons.add),
+      ),
     );
   }
-}*/
+}

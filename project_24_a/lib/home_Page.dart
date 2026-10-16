@@ -305,7 +305,7 @@ class HomePage extends StatelessWidget {
 
             SizedBox(height: 8),
 
-            // Skill 
+            // Skill
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Align(
@@ -353,58 +353,34 @@ class HomePage extends StatelessWidget {
             ),
 
             // HomePage
-            InkWell(
+            ListTile(
               onTap: () {},
               hoverColor: Colors.limeAccent,
               splashColor: Colors.greenAccent,
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("HomePage"),
-                    Icon(Icons.home),
-                  ],
-                ),
-              ),
+              title: Text("HomePage"),
+              trailing: Icon(Icons.home),
             ),
 
             Divider(color: Colors.lightBlueAccent),
 
             // Profile
-            InkWell(
+            ListTile(
               onTap: () {},
               hoverColor: Colors.limeAccent,
               splashColor:
                   const Color.fromARGB(255, 111, 143, 127),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Profile"),
-                    Icon(Icons.person),
-                  ],
-                ),
-              ),
+              title: Text("Profile"),
+              trailing: Icon(Icons.person),
             ),
 
             // Settings
-            InkWell(
+            ListTile(
               onTap: () {},
               hoverColor: Colors.limeAccent,
               splashColor:
                   const Color.fromARGB(255, 111, 143, 127),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Setting"),
-                    Icon(Icons.settings),
-                  ],
-                ),
-              ),
+              title: Text("Setting"),
+              trailing: Icon(Icons.settings),
             ),
 
             Spacer(),
@@ -412,26 +388,18 @@ class HomePage extends StatelessWidget {
             Divider(),
 
             // Logout
-            InkWell(
+            ListTile(
               onTap: () {},
               hoverColor: Colors.limeAccent,
               splashColor:
                   const Color.fromARGB(255, 111, 143, 127),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "LogOut",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Icon(Icons.logout),
-                  ],
+              title: Text(
+                "LogOut",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
                 ),
               ),
+              trailing: Icon(Icons.logout),
             ),
           ],
         ),
